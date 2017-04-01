@@ -1,7 +1,5 @@
 ### Feed Reader (Unit Testing) - Front-End Project 6 
 
-Link to the demo: [Link](https://leodlca.github.io/feed-reader)
-
 ## About the project
 
 The unit testing of Feed Reader was developed using Jasmine, a Behavior Driven Development testing framework for JavaScript. The goal was to create multiple layers of testing so the app can be safely updated in the future knowing that you're not breaking any previous feature.
