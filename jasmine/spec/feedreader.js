@@ -48,7 +48,7 @@ $(function() {
          it('should have a name', function() {
             allFeeds.forEach(function(item) {
                 expect(item.name).toBeDefined();
-                expect(item.name.lenght).not.toBe(0);
+                expect(item.name.length).not.toBe(0);
             });
         });
     });
@@ -96,7 +96,7 @@ $(function() {
             loadFeed(0, function(){
                 done();
             }
-        )});
+        );});
 
         /* Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -105,11 +105,10 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-         it('should be loaded (loadFeed)', function(done) {
-            var feedContainer = $('.feed');
+         it('should be loaded (loadFeed)', function() {
+            var feedContainer = $('.feed .entry-link');
 
-            expect(feedContainer.children().length).toBeGreaterThan(0);
-            done();
+            expect(feedContainer.length).toBeGreaterThan(0);
          });
 
     });
@@ -122,12 +121,12 @@ $(function() {
 
         beforeEach(function(done) {
             loadFeed(0, function() {
-                firstFeed = $('.feed');
+                firstFeed = $('.feed').html();
 
                 loadFeed(1, function() {
                     done();
-                })
-            })
+                });
+            });
         });
     
         /* TODO: Write a test that ensures when a new feed is loaded
@@ -136,8 +135,8 @@ $(function() {
          */
 
          it('should change its content', function(done) {
-            secondFeed = $('.feed');
-            expect(firstFeed).not.toBe(secondFeed);
+            secondFeed = $('.feed').html();
+            expect(firstFeed).not.toEqual(secondFeed);
             done();
          });
     });
