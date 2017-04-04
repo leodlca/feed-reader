@@ -106,7 +106,7 @@ $(function() {
          */
 
          it('should be loaded (loadFeed)', function() {
-            var feedContainer = $('.feed .entry-link');
+            var feedContainer = $('.feed .entry');
 
             expect(feedContainer.length).toBeGreaterThan(0);
          });
